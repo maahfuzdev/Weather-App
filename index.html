@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">🌙</button>
+
+  <div class="units-toggle">
+    <button class="unit-btn active" onclick="setUnits('metric')">°C</button>
+    <button class="unit-btn" onclick="setUnits('imperial')">°F</button>
+  </div>
+
+  <div class="app-container">
+    <div class="header">
+      <h1>WeatherPro</h1>
+      <p>Advanced Weather Intelligence Dashboard</p>
+    </div>
+
+    <div class="search-container">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="cityInput" placeholder="Search any city worldwide..."
+          spellcheck="false">
+      </div>
+      <button class="btn" onclick="searchWeather()" title="Search Weather">
+        🔍 Search
+      </button>
+      <button class="btn" onclick="getCurrentLocation()" title="Use Current Location">
+        📍 My Location
+      </button>
+    </div>
+
+    <div class="weather-grid">
+      <div class="main-weather" id="mainWeather">
+        <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather Icon" class="weather-icon"
+          id="weatherIcon">
+        <div class="temperature" id="temperature">25°C</div>
+        <div class="location" id="location">Dhaka, BD</div>
+        <div class="description" id="description">Clear sky</div>
+        <div class="feels-like" id="feelsLike">Feels like 28°C</div>
+      </div>
+
+      <div class="weather-stats">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-icon">💧</span>
+            <span class="stat-value" id="humidity">65%</span>
+          </div>
+          <div class="stat-label">Humidity</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-icon">💨</span>
+            <span class="stat-value" id="windSpeed">12 km/h</span>
+          </div>
+          <div class="stat-label">Wind Speed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-icon">🌡️</span>
+            <span class="stat-value" id="pressure">1013 hPa</span>
+          </div>
+          <div class="stat-label">Pressure</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-icon">👁️</span>
+            <span class="stat-value" id="visibility">10 km</span>
+          </div>
+          <div class="stat-label">Visibility</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="detail-icon">🌅</div>
+        <div class="detail-value" id="sunrise">6:30 AM</div>
+        <div class="detail-label">Sunrise</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">🌇</div>
+        <div class="detail-value" id="sunset">6:45 PM</div>
+        <div class="detail-label">Sunset</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">☁️</div>
+        <div class="detail-value" id="cloudiness">20%</div>
+        <div class="detail-label">Cloud Cover</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">🌡️</div>
+        <div class="detail-value" id="uvIndex">N/A</div>
+        <div class="detail-label">UV Index</div>
+      </div>
+    </div>
+
+    <div class="forecast-section">
+      <div class="forecast-header">
+        <h3 class="forecast-title">Weather Forecast</h3>
+        <div class="forecast-toggle">
+          <button class="toggle-btn active" onclick="toggleForecast('daily')">5-Day</button>
+          <button class="toggle-btn" onclick="toggleForecast('hourly')">24-Hour</button>
+        </div>
+      </div>
+      <div class="forecast-container" id="forecastContainer">
+        <!-- Forecast items will be added here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p>Fetching weather data...</p>
+    </div>
+  </div>
+
+  <div class="error-toast" id="errorToast">
+    <div id="errorMessage"></div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
