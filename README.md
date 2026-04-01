@@ -6,6 +6,10 @@ A modern responsive weather dashboard built with HTML, CSS and JavaScript.
 
 `WeatherPro` fetches real-time weather and forecast data from OpenWeather Map and displays it elegantly with animated cards, live UI updates, dark/light theme toggle, and unit switching (°C/°F).
 
+## 🌐 Live Demo
+
+- https://maahfuzdev.github.io/Weather-App/
+
 ## 📦 Project Structure
 
 - `index.html` - User interface markup
